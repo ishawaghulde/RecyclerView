@@ -14,13 +14,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder>{
 
     private Context mCtx;
     private Typeface myFont;
 
-    //we are storing all the products in a list
     private List<Card> cardList;
+    private static View.OnClickListener onItemClickListener;
+
+//    public void setItemClickListener(View.OnClickListener clickListener) {
+//        onItemClickListener = clickListener;
+//    }
 
     public RecyclerViewAdapter(Context mCtx, List<Card> cardList, Typeface myFont) {
         this.mCtx = mCtx;
@@ -30,7 +34,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        //inflating and returning our view holder
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(R.layout.layout_cards, null);
         return new RecyclerViewHolder(view);
@@ -38,10 +41,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(RecyclerViewHolder holder, int position) {
-        //getting the product of the specified position
         Card card = cardList.get(position);
 
-        //binding the data with the viewholder views
         holder.textViewTitle.setText(card.getTitle());
         holder.textViewTitle.setTypeface(myFont);
 
@@ -67,6 +68,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
             imageView = itemView.findViewById(R.id.imageView);
             cardView = itemView.findViewById(R.id.cardView);
+//            cardView.setOnClickListener(onItemClickListener);
+//            itemView.setTag(this);
+//            itemView.setOnClickListener(onItemClickListener);
         }
     }
 }

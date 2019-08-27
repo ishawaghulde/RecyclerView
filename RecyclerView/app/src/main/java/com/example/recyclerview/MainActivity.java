@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,15 @@ public class MainActivity extends AppCompatActivity {
     Typeface myFont;
 
     RecyclerView recyclerView;
+
+//    private View.OnClickListener onItemClickListener = new View.OnClickListener() {
+//        @Override
+//        public void onClick(View view) {
+//            RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) view.getTag();
+//            navigate();
+//
+//        }
+//    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,11 +140,19 @@ public class MainActivity extends AppCompatActivity {
                         R.drawable.search));
 
 
-        //creating recyclerview adapter
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, cardList, myFont);
 
-        //setting adapter to recyclerview
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, cardList, myFont);
+//        adapter.setItemClickListener(onItemClickListener);
+
+
         recyclerView.setAdapter(adapter);
 
+    }
+
+    public void navigate(View view){
+
+        Intent intent = new Intent(MainActivity.this, FixturesActivity.class);
+        startActivity(intent);
+        startActivity(intent);
     }
 }
