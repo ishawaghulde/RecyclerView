@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        myFont = Typeface.createFromAsset(this.getAssets(), "font/Unicorns are Awesome - TTF.ttf");
+        myFont = Typeface.createFromAsset(this.getAssets(), "font/AcmeRegular.ttf");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -92,15 +92,15 @@ public class MainActivity extends AppCompatActivity {
         cardList.add(
                 new Card(
                         "Kabaddi",
-                        R.drawable.hockey));
+                        R.drawable.kabbadi));
         cardList.add(
                 new Card(
                         "Kho Kho(Boys)",
-                        R.drawable.hockey));
+                        R.drawable.khokho));
         cardList.add(
                 new Card(
                         "Kho Kho(Girls))",
-                        R.drawable.hockey));
+                        R.drawable.khokho));
         cardList.add(
                 new Card(
                         "Marathon",
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         cardList.add(
                 new Card(
                         "Throwball",
-                        R.drawable.tennis));
+                        R.drawable.throwball));
         cardList.add(
                 new Card(
                         "Volleyball(Boys)",
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
         cardList.add(
                 new Card(
                         "SportsQuiz",
-                        R.drawable.search));
+                        R.drawable.sports_quiz));
 
 
 

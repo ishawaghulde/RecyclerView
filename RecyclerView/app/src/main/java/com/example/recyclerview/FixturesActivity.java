@@ -3,6 +3,7 @@ package com.example.recyclerview;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
@@ -29,6 +30,7 @@ public class FixturesActivity extends AppCompatActivity {
 
         tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+        tabLayout.setTabTextColors(ContextCompat.getColorStateList(this, R.color.white));
     }
 
     private void setupViewPager(ViewPager viewPager) {
